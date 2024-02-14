@@ -1,0 +1,28 @@
+<div class="flex">
+    <h1>Bienvenido {{ user.first_name }} {{ user.last_name }}!</h1>
+    <div style="display: flex; justify-content: space-around;
+    align-items: center;">
+<form action="/profile" method="get">
+    <button style="cursor: pointer;">Ver mi Perfil</button>
+</form>
+<form action="/realtimeproducts" method="get">
+    <button style="cursor: pointer;">Ver productos en tiempo real</button>
+</form>
+    </div>
+    <h1>Lista de productos:</h1>
+
+    {{#each products}}
+    <div class="product">
+        <ul>
+            <li>Codigo: {{this.code}}</li>
+            <h2>{{this.title}}</h2>
+            <li>{{this.thumbnail}}</li>
+            <li>Descripcion: {{this.description}}</li>
+            <li>Categoria: {{this.category}}</li>
+            <li>Stock: {{this.stock}}</li>
+            <li>Precio: $ {{this.price}}</li>
+        </ul> 
+    </div>    
+    {{/each}}
+    
+</div>
